@@ -1,0 +1,4 @@
+services/StockService.class
+HedgeFundIndex.class
+model/Stock.class
+model/Trader.class
