@@ -60,8 +60,9 @@ public class StockService {
             {
 
                 if (currentStock.getSymbol().equals(id))
-                    return currentStock;
+                    return currentStock; // return here finish method and return value
             }
+            
             return null;
  
     }
@@ -74,27 +75,57 @@ public class StockService {
             {
 
                      if( currentStock.getSymbol().equals(stockSymbol))
+                     {
                          currentStock.setPrice(price);
+                         break; // break here finish for loop and continue execution after for loop
+                     }
 
             }
  
     }
     
-    public Double setStockpricebySymbol(String stockSymbol, Double price)
+    public void setStockpricebySymbol(String stockSymbol, Double price)
     {
             for(Stock currentStock : availableStockList)
             {
                 if(currentStock.getSymbol().equals(stockSymbol))
+                {
                     currentStock.setPrice(price);
+                    break;
+                }
 
             }
-            return null;
+            
 
     }
     
-    public void addStock()
+    public void addStock(String companyName , String stockSymbol)
     {
+        Stock newStocktoadd = new Stock();
+        newStocktoadd.setCompanyName(companyName);
+        newStocktoadd.setSymbol(stockSymbol);
+        newStocktoadd.setPrice(0d);
+        
+        availableStockList.add(newStocktoadd);
+        
         
     }
+    
+    public void removeStockbySymbol(String stockSymbol)
+    {
+        
+            for(Stock currentStock : availableStockList)
+            {
+                if(currentStock.getSymbol().equals(stockSymbol))
+                {
+                    availableStockList.remove(currentStock);
+                    break;
+                }
+            }
+    }
+    
+    
+    
+    
 }
     
