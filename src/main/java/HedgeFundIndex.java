@@ -1,4 +1,5 @@
 
+import java.nio.charset.Charset;
 import model.Stock;
 import services.StockService;
 
@@ -28,8 +29,13 @@ public class HedgeFundIndex {
         
          System.out.println("Apple new price = " + apple.getPrice());
         
-        
-        
+        System.out.println("Adding new stock");
+         
+      //  Stock citibank = stockServ.addStock("Citibank", "C");
+      
+      
+        stockServ.printouStocktList();
+
      // add method here
       
         

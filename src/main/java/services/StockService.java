@@ -116,13 +116,44 @@ public class StockService {
         
             for(Stock currentStock : availableStockList)
             {
-                if(currentStock.getSymbol().equals(stockSymbol))
+                if(currentStock.getSymbol().equals(stockSymbol)) //searching by symbol which is an attribute of the object
                 {
                     availableStockList.remove(currentStock);
                     break;
                 }
             }
     }
+    
+    
+    // removing object (STOCK)
+    public  void removeStock(Stock stock)
+         {
+             for(Stock currentStock : availableStockList)
+             {
+                 if(currentStock.equals(stock))
+                 {
+                     availableStockList.remove(stock); //remove object
+                     break;
+                 }
+                 
+                 
+             }
+        
+         }
+    
+    
+    
+    public String printouStocktList()
+    {
+        for(Stock currentStock : availableStockList)
+        {
+            System.out.println("Stock " + currentStock.getCompanyName() + "," + currentStock.getSymbol());
+         
+            // System.out.println("Stock list " + currentStock);
+        }
+        return null;
+    }
+        
     
     
     
